@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 // @ts-ignore
 import { init } from "../assets/src/main.js";
+import { MainController } from '../assets/navigation/mainController';
 
 declare const window: Window &
   typeof globalThis & {
@@ -26,6 +27,8 @@ export class AppComponent {
 
   constructor() {
     // init() // Initialize navigation library
+    const navigation = new MainController();
+    navigation.init();
   }
 
   selectNavigation(item: number) {
