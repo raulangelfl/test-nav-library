@@ -1,3 +1,4 @@
+import { NavigationService } from './navigation.service';
 import { Component } from '@angular/core';
 // @ts-ignore
 import { init } from "../assets/src/main.js";
@@ -25,10 +26,11 @@ export class AppComponent {
     ['#7400b8', '#6930c3', '#5e60ce', '#5390d9', '#4ea8de', '#48bfe3', '#56cfe1', '#64dfdf', '#72efdd', '#80ffdb'],
   ]
 
-  constructor() {
+  constructor(
+    private navigationService: NavigationService
+  ) {
     // init() // Initialize navigation library
-    const navigation = new MainController();
-    navigation.init();
+    this.navigationService.init();
   }
 
   selectNavigation(item: number) {
