@@ -1,5 +1,5 @@
 import { NavigationService } from './navigation.service';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 // @ts-ignore
 import { init } from "../assets/src/main.js";
 import { MainController } from '../assets/navigation/mainController';
@@ -14,7 +14,7 @@ declare const window: Window &
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   selectedItem = 0
   navigationOptions = ['Horizontal Example', 'Vertical Example', 'Grid Example', 'Children Between Example']
 
@@ -33,6 +33,10 @@ export class AppComponent {
     this.navigationService.init();
   }
 
+  ngAfterViewInit(): void {
+    this.navigationService.focusElement();
+  }
+
   selectNavigation(item: number) {
     console.log(item)
     this.selectedItem = item;
@@ -42,13 +46,15 @@ export class AppComponent {
    * Navigation
    */
   keyDown(e: any) {
+    const oldValue = this.navigationService.getActualHorizontal();
+    console.log('oldValue: ', oldValue);
     // Right arrow
     if (e.keyCode === 39) {
-      window.actualHorizontal += 1;
+      this.navigationService.setActualHorizontal(oldValue + 1);
     }
     // Left arrow
     else if (e.keyCode === 37) {
-      window.actualHorizontal -= 1;
+      this.navigationService.setActualHorizontal(oldValue - 1);
     }
   }
 }

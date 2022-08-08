@@ -12,4 +12,16 @@ export class NavigationService {
   init() {
     this.navigationController.init();
   }
+
+  setActualHorizontal(value: number) {
+    this.navigationController.ActualHorizontal = value;
+  }
+
+  getActualHorizontal(): number {
+    return this.navigationController.ActualHorizontal;
+  }
+
+  focusElement(): void {
+    this.navigationController.moveToNextFocusableElemet();
+  }
 }
