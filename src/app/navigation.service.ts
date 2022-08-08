@@ -16,10 +16,19 @@ export class NavigationService {
   setActualHorizontal(value: number) {
     this.navigationController.ActualHorizontal = value;
   }
-
+  
   getActualHorizontal(): number {
     return this.navigationController.ActualHorizontal;
   }
+
+  setActualVertical(value: number) {
+    this.navigationController.ActualVertical = value;
+  }
+
+  getActualVertical(): number {
+    return this.navigationController.ActualVertical;
+  }
+
 
   focusElement(): void {
     this.navigationController.moveToNextFocusableElemet();

@@ -17,6 +17,14 @@ export class MainController{
 
   get ActualHorizontal(): number {
     return this.actualHorizontal;
+  }
+  
+  set ActualVertical(value: number) {
+    this.actualVertical = value;
+  }
+
+  get ActualVertical(): number {
+    return this.actualVertical;
   }  
 
   /**

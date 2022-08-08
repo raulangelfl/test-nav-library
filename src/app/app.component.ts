@@ -50,11 +50,15 @@ export class AppComponent implements AfterViewInit {
     console.log('oldValue: ', oldValue);
     // Right arrow
     if (e.keyCode === 39) {
-      this.navigationService.setActualHorizontal(oldValue + 1);
+      if (this.navigationService.getActualHorizontal() + 1 < this.navigationOptions.length) {
+        this.navigationService.setActualHorizontal(oldValue + 1);
+      }
     }
     // Left arrow
     else if (e.keyCode === 37) {
-      this.navigationService.setActualHorizontal(oldValue - 1);
+      if (this.navigationService.getActualHorizontal() - 1 >= 0) {
+        this.navigationService.setActualHorizontal(oldValue - 1);
+      }
     }
   }
 }
