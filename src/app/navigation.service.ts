@@ -4,7 +4,7 @@ import { createNavigationService, NavigationService as NService } from 'fl-navig
 import { NavigationConfig } from 'fl-navigation/dist/model/config';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NavigationService {
   // navigationController = new MainController;
@@ -18,7 +18,7 @@ export class NavigationService {
   // setActualHorizontal(value: number) {
   //   this.navigationController.ActualHorizontal = value;
   // }
-  
+
   // getActualHorizontal(): number {
   //   return this.navigationController.ActualHorizontal;
   // }
@@ -31,7 +31,6 @@ export class NavigationService {
   //   return this.navigationController.ActualVertical;
   // }
 
-
   // focusElement(): void {
   //   this.navigationController.moveToNextFocusableElemet();
   // }
@@ -40,12 +39,11 @@ export class NavigationService {
     enabledebugLogs: true,
     horizontalContainerName: 'carousel-container',
     focusableElementName: 'focusable-element',
-    verticalContainerName: '',
+    verticalContainerName: 'empty-container',
     infinityContainerName: 'infinity-container',
-    gridRowName: ''
+    gridRowName: 'empty-row',
   };
-  constructor() { 
-    
+  constructor() {
     this.navigationService = createNavigationService(this.config, document);
   }
   init(): void {

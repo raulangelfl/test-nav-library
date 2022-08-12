@@ -1,3 +1,8 @@
+section {
+    background-color: white;
+    min-width: 100vw;
+    min-height: 100vh;
+}
 .header {
     display: flex;
     flex-direction: row;
@@ -80,6 +85,11 @@ html, body {
     height: 100vh !important;
     overflow: hidden !important;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+app-root {
+    background-color: white;
 }
 
 
