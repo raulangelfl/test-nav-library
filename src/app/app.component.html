@@ -8,12 +8,12 @@
         >{{option}}</li>
 </ul>
 
-<!-- <ng-template [ngIf]="selectedItem === 0">
+<ng-template [ngIf]="selectedItem === 0">
     <div *ngFor="let color of colors; let i=index">
         <h1 class="title" [style.backgroundColor]="color[0]">Carousel #{{i + 1}} {{i % 2 == 0 ? 'Infinite' : 'Normal'}}</h1>
         <app-carousel [isInfiniteCarousel]="i % 2 == 0" [container]="color"></app-carousel>
     </div>
-</ng-template> -->
+</ng-template>
 
 <!-- <ng-template [ngIf]="selectedItem === 1">
     <app-vertical-carousel [container]="colors[4]"></app-vertical-carousel>

@@ -29,7 +29,7 @@ export class GridCarouselComponent implements OnInit {
    * Navigation
    */
   setCarouselType(): void {
-    window.isInGridCarousel = true;
-    window.isInNormalCarousel = false;
+    // window.isInGridCarousel = true;
+    // window.isInNormalCarousel = false;
   }
 }

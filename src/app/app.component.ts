@@ -30,35 +30,37 @@ export class AppComponent implements AfterViewInit {
     private navigationService: NavigationService
   ) {
     // init() // Initialize navigation library
-    this.navigationService.init();
+    // this.navigationService.init();
   }
 
   ngAfterViewInit(): void {
-    this.navigationService.focusElement();
+    // this.navigationService.focusElement();
+    this.navigationService.init();
+    this.navigationService.focusFirstElement();
   }
 
   selectNavigation(item: number) {
     console.log(item)
     this.selectedItem = item;
   }
-  
+
   /**
    * Navigation
    */
   keyDown(e: any) {
-    const oldValue = this.navigationService.getActualHorizontal();
-    console.log('oldValue: ', oldValue);
+    // const oldValue = this.navigationService.getActualHorizontal();
+    // console.log('oldValue: ', oldValue);
     // Right arrow
     if (e.keyCode === 39) {
-      if (this.navigationService.getActualHorizontal() + 1 < this.navigationOptions.length) {
-        this.navigationService.setActualHorizontal(oldValue + 1);
-      }
+      // if (this.navigationService.getActualHorizontal() + 1 < this.navigationOptions.length) {
+        // this.navigationService.setActualHorizontal(oldValue + 1);
+      // }
     }
     // Left arrow
     else if (e.keyCode === 37) {
-      if (this.navigationService.getActualHorizontal() - 1 >= 0) {
-        this.navigationService.setActualHorizontal(oldValue - 1);
-      }
+      // if (this.navigationService.getActualHorizontal() - 1 >= 0) {
+        // this.navigationService.setActualHorizontal(oldValue - 1);
+      // }
     }
   }
 }

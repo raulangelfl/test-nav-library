@@ -34,14 +34,15 @@ export class CarouselComponent implements OnInit {
    */
   // Get focus on current card depending if carousel is infinite or not
   getActualFocus(): void {
-    window.isInGridCarousel = false;
-    window.isInNormalCarousel = true;
+    // console.log('getActualFocus');
+    // window.isInGridCarousel = false;
+    // window.isInNormalCarousel = true;
 
-    if (this.isInfiniteCarousel) {
-      window.actualHorizontal = 0;
-    } else {
-      window.actualHorizontal = this.horizontalIndex;
-    }
+    // if (this.isInfiniteCarousel) {
+    //   window.actualHorizontal = 0;
+    // } else {
+    //   window.actualHorizontal = this.horizontalIndex;
+    // }
     // carouselHorizontalMovement();
   }
 
@@ -54,7 +55,7 @@ export class CarouselComponent implements OnInit {
       // If not is infinite carousel and user is not on the last card
       if (!this.isInfiniteCarousel && this.horizontalIndex < this.container.length - 1) {
         this.horizontalIndex += 1;
-        window.actualHorizontal = this.horizontalIndex;
+        // window.actualHorizontal = this.horizontalIndex;
         // Move the css and focus next card
         this.move.right = `${cardRealSize * this.horizontalIndex}vw`;
       }
@@ -71,7 +72,7 @@ export class CarouselComponent implements OnInit {
       // If not is infinite carousel and user is not on the first card
       if (!this.isInfiniteCarousel && this.horizontalIndex > 0) {
         this.horizontalIndex -= 1;
-        window.actualHorizontal = this.horizontalIndex;
+        // window.actualHorizontal = this.horizontalIndex;
         // Move the css and focus next card
         this.move.right = `${cardRealSize * this.horizontalIndex}vw`;
       }

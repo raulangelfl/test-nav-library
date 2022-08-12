@@ -1,36 +1,57 @@
 import { Injectable } from '@angular/core';
-import { MainController } from '../assets/navigation/mainController';
+// import { MainController } from '../assets/navigation/mainController';
+import { createNavigationService, NavigationService as NService } from 'fl-navigation';
+import { NavigationConfig } from 'fl-navigation/dist/model/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavigationService {
-  navigationController = new MainController;
+  // navigationController = new MainController;
 
-  constructor() {}
+  // constructor() {}
 
-  init() {
-    this.navigationController.init();
-  }
+  // init() {
+  //   this.navigationController.init();
+  // }
 
-  setActualHorizontal(value: number) {
-    this.navigationController.ActualHorizontal = value;
-  }
+  // setActualHorizontal(value: number) {
+  //   this.navigationController.ActualHorizontal = value;
+  // }
   
-  getActualHorizontal(): number {
-    return this.navigationController.ActualHorizontal;
+  // getActualHorizontal(): number {
+  //   return this.navigationController.ActualHorizontal;
+  // }
+
+  // setActualVertical(value: number) {
+  //   this.navigationController.ActualVertical = value;
+  // }
+
+  // getActualVertical(): number {
+  //   return this.navigationController.ActualVertical;
+  // }
+
+
+  // focusElement(): void {
+  //   this.navigationController.moveToNextFocusableElemet();
+  // }
+  navigationService: NService;
+  config: NavigationConfig = {
+    enabledebugLogs: true,
+    horizontalContainerName: 'carousel-container',
+    focusableElementName: 'focusable-element',
+    verticalContainerName: '',
+    infinityContainerName: 'infinity-container',
+    gridRowName: ''
+  };
+  constructor() { 
+    
+    this.navigationService = createNavigationService(this.config, document);
   }
-
-  setActualVertical(value: number) {
-    this.navigationController.ActualVertical = value;
+  init(): void {
+    this.navigationService.init();
   }
-
-  getActualVertical(): number {
-    return this.navigationController.ActualVertical;
-  }
-
-
-  focusElement(): void {
-    this.navigationController.moveToNextFocusableElemet();
+  focusFirstElement(): void {
+    this.navigationService.focusFirstElement();
   }
 }

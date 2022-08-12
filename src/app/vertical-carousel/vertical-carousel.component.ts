@@ -22,7 +22,7 @@ export class VerticalCarouselComponent implements OnInit {
    * Navigation
    */
    setCarouselType(): void {
-    window.isInGridCarousel = false;
-    window.isInNormalCarousel = true;
+    // window.isInGridCarousel = false;
+    // window.isInNormalCarousel = true;
   }
 }
